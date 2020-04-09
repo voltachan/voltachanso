@@ -12,8 +12,8 @@ local curl=require("lcurl.safe")
 
 script_info = {
   title = "V搜",
-  description = "更新时间：2020年4月8日22:08:51",
-  version = "0.0.2"
+  description = "更新时间：2020年4月9日18:23:10",
+  version = "0.0.3"
 }
 
 local  filetype = {
@@ -133,7 +133,7 @@ function onSearch(key, page)
     })
     return r
   end
-  local request_body = "appKey="..app_key.."&openId="..open_id.."&highlight=1&q="..key.."&pageSize=25&currentPage="..page
+  local request_body = "appKey="..app_key.."&openId="..open_id.."&highlight=1&t=down&o=1&q="..key.."&pageSize=25&currentPage="..page
   local r = ""
 	local c = curl.easy{
 		url = "https://api.xiaocongjisuan.com/data/skydriverdata/get",
@@ -160,7 +160,38 @@ function parse(data)
   local title,tooltip,urlget
   local result = {}
   local j = json.decode(data)
-    if j == nil or j.data.result == nil or j.data.result == json.null then
+  if j.errorCode~=0 then
+  if ret2==10005 then
+    table.insert(result, {
+      ["url"] = "",
+      ["title"] = "{c #ff0000}请关闭IP白名单！{/c}",
+      ["time"] = os.date("%Y-%m-%d %H:%M", os.time()),
+      ["showhtml"] = "true",
+      ["tooltip"] = "请关闭IP白名单！",
+      ["icon_size"] = "28,28",
+      ["image"] = getIcon(true),
+    })
+    pd.logInfo("请关闭IP白名单！")
+    else
+    table.insert(result, {
+      ["url"] = "",
+      ["title"] = "{c #ff0000}发生错误："..j.errorMessage.."{/c}",
+      ["time"] = os.date("%Y-%m-%d %H:%M", os.time()),
+      ["showhtml"] = "true",
+      ["tooltip"] = "发生错误："..j.errorMessage,
+      ["icon_size"] = "28,28",
+      ["image"] = getIcon(true),
+    })
+    pd.logInfo("发生错误："..j.errorMessage)
+    end
+    return result
+    end
+    local ret1,ret2=pcall(function(j) return j == nil or j.data.result == nil or j.data.result == json.null end,j)
+    if ret1 then
+    if ret2 then
+        return result
+    end
+    else
         return result
     end
   for _, item in pairs(j.data.result) do

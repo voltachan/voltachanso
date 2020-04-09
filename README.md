@@ -1,9 +1,11 @@
 # V搜
 V搜——一个简单的 Pandownload 搜索插件
 
+***步骤繁琐，懒人请绕道***
+
 ```
-当前版本：0.0.2
-更新时间：2020年4月8日22:08:51
+当前版本：0.0.3
+更新时间：2020年4月9日18:23:10
 ```
 
 
@@ -15,12 +17,26 @@ V搜——一个简单的 Pandownload 搜索插件
 ## 使用方法
 
 1. 按照[提示](https://github.com/voltachan/voltachanso/blob/master/register.md)申请 `小葱计算 API` ，获取 `appKey` 和 `openid`
-2. 填写 `search_voltachan.lua` 中开头的 `app_key` 和 `open_id`
-3. 复制到 `PanData\script` ，重启 Pandownload ，选择 `V搜` 即可使用。
+
+2. ***进入“安全中心”→“IP白名单”（或点击[此处](https://www.xiaocongjisuan.com/ucenter/safety/whitelist)），取消勾选网盘数据***
+
+   ![image.png](https://i.loli.net/2020/04/09/pfCtPHxWOlagJTh.png)
+
+3. 填写 `search_voltachan.lua` 中开头的 `app_key` 和 `open_id`
+
+4. 复制到 `PanData\script` ，重启 Pandownload ，选择 `V搜` 即可使用。
 
 ## 演示图片
 
 ![image.png](https://i.loli.net/2020/04/08/PcrwSvtKVz4jI7G.png)
+
+## 常见问题
+
+1. 提示“该IP没有请求权限，请检查白名单设置”或“请关闭IP白名单！”
+
+   > 进入“安全中心”→“IP白名单”（或点击[此处](https://www.xiaocongjisuan.com/ucenter/safety/whitelist)），取消勾选网盘数据
+   >
+   > ![image.png](https://i.loli.net/2020/04/09/pfCtPHxWOlagJTh.png)
 
 # 注意
 

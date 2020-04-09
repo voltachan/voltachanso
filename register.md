@@ -28,7 +28,11 @@
 
    ![image.png](https://i.loli.net/2020/04/08/BhMLxs3RpiJwn9I.png)
 
-9. 需要的两个数据，请在`search_voltachan.lua`中按提示替换。
+9. 进入“安全中心”→“IP白名单”（或点击[此处](https://www.xiaocongjisuan.com/ucenter/safety/whitelist)），取消勾选网盘数据
+
+   ![image.png](https://i.loli.net/2020/04/09/pfCtPHxWOlagJTh.png)
+
+10. 需要的两个数据，请在`search_voltachan.lua`中按提示替换。
 
    * openID
 
