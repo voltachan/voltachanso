@@ -12,7 +12,7 @@ V搜——一个简单的 Pandownload 搜索插件
 
 ## 下载地址
 
-> [search_voltachan.lua](https://raw.githubusercontent.com/voltachan/voltachanso/master/search_voltachan.lua)
+> [search_voltachan.lua](https://raw.githubusercontent.com/voltachan/voltachanso/master/search_voltachan.lua)（右键“网页另存为”或复制链接，使用迅雷下载）
 
 ## 使用方法
 
